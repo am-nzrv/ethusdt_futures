@@ -7,6 +7,7 @@ from binance.client import Client
 
 from secrets import MY_API_KEY, MY_API_SECRET
 
+
 api_key = MY_API_KEY
 api_secret = MY_API_SECRET
 client = Client(api_key=api_key, api_secret=api_secret)
