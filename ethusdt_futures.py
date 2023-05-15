@@ -39,7 +39,6 @@ x_axis = btcusdt_price.to_frame(name='btcusdt_price')
 frame = pd.concat([y_axis, x_axis], axis=1)
 
 
-
 # Построим диаграмму рассеяния.
 plt.scatter(frame.ethusdt_price, frame.btcusdt_price)
 plt.xlabel('BTCUSDT')
