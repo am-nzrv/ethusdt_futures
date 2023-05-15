@@ -26,6 +26,7 @@ def get_candles(symbol, interval, n):
     df = df.astype('float')
     return df
 
+
 # Узнаем последние 100 свечей для ETHUSDT и BTCUSDT за 1 минуту.
 ethusdt_100_candle = get_candles('ETHUSDT', Client.KLINE_INTERVAL_1MINUTE, 100)
 btcusdt_100_candle = get_candles('BTCUSDT', Client.KLINE_INTERVAL_1MINUTE, 100)
