@@ -63,9 +63,7 @@ eth_real = ethusdt_price - dependence_coefficient * btcusdt_price
 def change_percentage_check(price_list):
     """Функция для отслеживания изменения цены более чем на 1%."""
     min_price = price_list[0]
-    print(min_price, 'мин')
     max_price = price_list[0]
-    print(max_price, 'макс')
 
     for price in price_list:
         if price < min_price:
