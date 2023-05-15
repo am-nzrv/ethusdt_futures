@@ -27,13 +27,13 @@ def get_candles(symbol, interval, n):
     return df
 
 # Узнаем последние 100 свечей для ETHUSDT и BTCUSDT за 1 минуту.
-data_ETHUSDT = get_candles('ETHUSDT', Client.KLINE_INTERVAL_1MINUTE, 100)
-data_BTCUSDT = get_candles('BTCUSDT', Client.KLINE_INTERVAL_1MINUTE, 100)
+ethusdt_100_candle = get_candles('ETHUSDT', Client.KLINE_INTERVAL_1MINUTE, 100)
+btcusdt_100_candle = get_candles('BTCUSDT', Client.KLINE_INTERVAL_1MINUTE, 100)
 
 
 # Соберем фрейм из цен ETHUSDT и BTCUSDT на закрытии.
-ethusdt_price = pd.Series(data_ETHUSDT['Close'].values)
-btcusdt_price = pd.Series(data_BTCUSDT['Close'].values)
+ethusdt_price = pd.Series(ethusdt_100_candle['Close'].values)
+btcusdt_price = pd.Series(btcusdt_100_candle['Close'].values)
 y_axis = ethusdt_price.to_frame(name='ethusdt_price')
 x_axis = btcusdt_price.to_frame(name='btcusdt_price')
 frame = pd.concat([y_axis, x_axis], axis=1)
